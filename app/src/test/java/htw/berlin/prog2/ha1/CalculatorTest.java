@@ -118,7 +118,7 @@ class  CalculatorTest {
         calc.pressEqualsKey();
         calc.pressUnaryOperationKey("√");
 
-        String expected = "3.0";
+        String expected = "3";
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
