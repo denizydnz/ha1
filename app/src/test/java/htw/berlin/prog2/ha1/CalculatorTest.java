@@ -93,7 +93,7 @@ class  CalculatorTest {
 
     @Test
     @DisplayName("should divide 2 numbers and display the result")
-    void testSquareResult() {
+    void testDivisionResult() {
         Calculator calc = new Calculator();
 
         calc.pressDigitKey(3);
@@ -102,6 +102,23 @@ class  CalculatorTest {
         calc.pressEqualsKey();
 
         String expected = "1";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("should multiply 2 numbers and square the result")
+    void testSquareResult() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(3);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(3);
+        calc.pressEqualsKey();
+        calc.pressUnaryOperationKey("√");
+
+        String expected = "3.0";
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
