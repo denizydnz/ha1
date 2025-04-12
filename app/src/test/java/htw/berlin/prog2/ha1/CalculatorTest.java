@@ -125,7 +125,7 @@ class  CalculatorTest {
     }
 
     @Test
-    @DisplayName("should multiply 2 numbers clear the screen but not the latest value")
+    @DisplayName("should multiply 2 numbers clear the screen but not the latest value as well as the latest operation")
     void testDoubleEquals() {
         Calculator calc = new Calculator();
 
