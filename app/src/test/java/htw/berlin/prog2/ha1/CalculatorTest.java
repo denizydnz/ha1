@@ -123,5 +123,33 @@ class  CalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("should multiply 2 numbers clear the screen but not the latest value")
+    void testDoubleEquals() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(3);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(4);
+        calc.pressEqualsKey();
+        calc.pressClearKey();
+
+        String expected1 = "x";
+        String actual1 = calc.getLatestOperation();
+
+        String expected2 = "3.0";
+        String actual2 = Double.toString(calc.getLatestValue());
+
+        String expected3 = "0";
+        String actual3 = calc.readScreen();
+
+        assertEquals(expected1, actual1);
+        assertEquals(expected2, actual2);
+        assertEquals(expected3, actual3);
+
+
+    }
+
 }
 
